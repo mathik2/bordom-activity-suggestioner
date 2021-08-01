@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('wallpaper.png');
+            background-size: cover;
+        }
+        
+        label {
+            color: yellow;
+            text-align: center;
+            padding: 0.3cm;
+            margin-left: 14cm;
+            margin-top: 1cm;
+            font-size: 2rem;
+            border: 2px solid white;
+            border-radius: 50px;
+            background-color: black;
+        }
+        
+        .container {
+            height: 5cm;
+            width: 10cm;
+            margin-top: 3cm;
+            margin-left: 9cm;
+        }
+        
+        .content {
+            height: 6cm;
+            width: 15cm;
+            border: 2px solid rgb(250, 234, 13);
+            border-radius: 15px 50px;
+            background-color: aliceblue;
+            margin: 1rem;
+        }
+        
+        #suggestedTopic {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+        }
+        
+        #activity {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 1cm;
+            font-weight: bolder;
+        }
+        
+        button {
+            margin-left: 5cm;
+            margin-top: 1cm;
+            padding: 1rem;
+            color: white;
+            background-color: orangered;
+            font-size: 1.5rem;
+            border: 1px solid black;
+            border-radius: 50px;
+            box-shadow: 2px 2px 2px 5px rgb(216, 212, 212);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+        }
+        
+        a {
+            color: rgb(15, 234, 241);
+            text-shadow: 1px 1px white;
+        }
+        
+        footer {
+            margin-top: 4cm;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            label {
+                margin-left: 4cm;
+                margin-top: 1cm;
+            }
+            .container {
+                height: 6cm;
+                width: 11cm;
+                margin-top: 2cm;
+                margin-left: 1.5cm;
+            }
+            .content {
+                height: 6cm;
+                width: 10cm;
+            }
+            #suggestedTopic {
+                font-size: 1.5rem;
+            }
+            button {
+                margin-left: 3.4cm;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <label>Getting bored ?</label>
+    <div class="container">
+        <div class="content">
+            <div id="suggestedTopic"></div>
+            <div id="activity"></div>
+        </div>
+        <button onclick="document.location.reload(true)">New Activity</button>
+    </div>
+    <br><br>
+    <footer><a href="mailto:mathivathanasp@gmail.com">For any suggestion!? click Here</a></footer>
+    <script>
+        const topic = document.getElementById('suggestedTopic')
+        const activity = document.getElementById('activity')
+
+        fetch('https://www.boredapi.com/api/activity')
+            .then(res => res.json())
+            .then(data => {
+                topic.innerHTML = "Try this   " + data.type + "  activity"
+                console.log(topic);
+                activity.innerHTML = data.activity;
+                console.log(activity);
+            })
+    </script>
+</body>
+
+</html>
