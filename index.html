@@ -118,20 +118,27 @@
         </div>
         <button onclick="document.location.reload(true)">New Activity</button>
     </div>
+
     <br><br>
+
     <footer><a href="mailto:mathivathanasp@gmail.com">For any suggestion!? click Here</a></footer>
+
     <script>
         const topic = document.getElementById('suggestedTopic')
-        const activity = document.getElementById('activity')
+        const activityText = document.getElementById('activity')
 
-        async function activity() {
-            let res = await fetch('https://www.boredapi.com/api/activity')
-                .then(res => res.json())
-                .then(data => {
-                    topic.innerHTML = "Try this   " + data.type + "  activity"
-                    activity.innerHTML = data.activity;
-                })
+        async function activities() {
+            var response = await fetch('https://www.boredapi.com/api/activity')
+            var data = await response.json();
+            return data;
+
         }
+
+        activities().then(data => {
+            topic.innerHTML = "Try this   " + data.type + "  activity"
+            activityText.innerHTML = data.activity;
+
+        })
     </script>
 </body>
 
