@@ -124,14 +124,14 @@
         const topic = document.getElementById('suggestedTopic')
         const activity = document.getElementById('activity')
 
-        fetch('https://www.boredapi.com/api/activity')
-            .then(res => res.json())
-            .then(data => {
-                topic.innerHTML = "Try this   " + data.type + "  activity"
-                console.log(topic);
-                activity.innerHTML = data.activity;
-                console.log(activity);
-            })
+        async function activity() {
+            let res = await fetch('https://www.boredapi.com/api/activity')
+                .then(res => res.json())
+                .then(data => {
+                    topic.innerHTML = "Try this   " + data.type + "  activity"
+                    activity.innerHTML = data.activity;
+                })
+        }
     </script>
 </body>
 
