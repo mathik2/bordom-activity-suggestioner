@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <style>
         body {
             background-image: url('wallpaper.png');
@@ -16,8 +18,6 @@
             color: yellow;
             text-align: center;
             padding: 0.3cm;
-            margin-left: 14cm;
-            margin-top: 1cm;
             font-size: 2rem;
             border: 2px solid white;
             border-radius: 25px 50px;
@@ -27,8 +27,6 @@
         .container {
             height: 5cm;
             width: 10cm;
-            margin-top: 3cm;
-            margin-left: 9cm;
         }
         
         .content {
@@ -55,8 +53,6 @@
         }
         
         button {
-            margin-left: 5cm;
-            margin-top: 1cm;
             padding: 1rem;
             color: white;
             background-color: orangered;
@@ -73,7 +69,7 @@
         }
         
         footer {
-            margin-top: 4cm;
+            margin-top: 2cm;
             font-size: 1.4rem;
             text-align: center;
         }
@@ -100,7 +96,6 @@
                 font-size: 1.5rem;
             }
             button {
-                margin-left: 3cm;
                 font-size: 1rem;
             }
         }
@@ -110,18 +105,25 @@
 
 <body>
     <!--The heading-->>
-    <header>Getting bored ?</header>
+    <header class="container-fluid">Activity Suggestor -Getting bored ?</header>
 
     <!--The container which holds data part-->>
-    <div class="container">
+
+    <div class="d-flex justify-content-center">
         <div class="content">
             <div id="suggestedTopic"></div>
+            <hr>
             <div id="activity"></div>
         </div>
+
+    </div>
+    <div class="d-flex justify-content-center">
         <button onclick="document.location.reload(true)">New Activity</button>
     </div>
 
-    <br><br>
+
+
+
     <!--The footer part-->>
 
     <footer>
