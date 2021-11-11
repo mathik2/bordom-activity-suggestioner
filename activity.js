@@ -8,9 +8,18 @@
  3) json() that lets you extract a JSON object from the response
  */
  async function activities() {
-     var response = await fetch('https://www.boredapi.com/api/activity')
-     var data = await response.json();
-     return data;
+     try {
+        var response = await fetch('https://www.boredapi.com/api/activity')
+        if (response.status==200) {
+            var data = await response.json();
+            return data;
+        }
+    
+     } catch (error) {
+         alert("try after some time ")
+         
+     }
+
 
  }
  //After that using promise ,we can retrive data
