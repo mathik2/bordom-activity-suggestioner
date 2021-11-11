@@ -1,0 +1,90 @@
+body {
+    background-image: url('wallpaper.png');
+    background-size: cover;
+}
+
+header {
+    color: yellow;
+    text-align: center;
+    padding: 0.3cm;
+    font-size: 2rem;
+    border: 2px solid white;
+    border-radius: 25px 50px;
+    background-color: black;
+}
+
+.container {
+    height: 5cm;
+    width: 10cm;
+}
+
+.content {
+    height: 6cm;
+    width: 15cm;
+    border: 2px solid rgb(250, 234, 13);
+    border-radius: 15px 50px;
+    background-color: aliceblue;
+    margin: 1rem;
+}
+
+#suggestedTopic {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+}
+
+#activity {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1cm;
+    font-weight: bolder;
+}
+
+button {
+    padding: 1rem;
+    color: white;
+    background-color: orangered;
+    font-size: 1.5rem;
+    border: 1px solid rgb(236, 110, 6);
+    border-radius: 50px;
+    box-shadow: 0px 0px 4px 5px rgb(233, 227, 222);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+}
+
+a {
+    color: rgb(15, 234, 241);
+    text-shadow: 1px 1px white;
+}
+
+footer {
+    margin-top: 2cm;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        margin-left: 1cm;
+        margin-top: 1cm;
+    }
+    .container {
+        height: 6cm;
+        width: 9cm;
+        margin-top: 2cm;
+        margin-left: 0%;
+    }
+    .content {
+        height: 6cm;
+        width: 9cm;
+    }
+    #suggestedTopic {
+        font-size: 1.1rem;
+    }
+    #activity {
+        font-size: 1.5rem;
+    }
+    button {
+        font-size: 1rem;
+    }
+}
